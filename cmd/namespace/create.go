@@ -60,7 +60,7 @@ func Create(ctx context.Context) *cobra.Command {
 			analytics.TrackCreateNamespace(err == nil)
 			return err
 		},
-		Args: utils.MaximumNArgsAccepted(1, ""),
+		Args: utils.MaximumNArgsAccepted(2, ""),
 	}
 
 	options.Members = cmd.Flags().StringArrayP("members", "m", []string{}, "members of the namespace, it can the username or email")
